@@ -16,3 +16,18 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
+
+Auth::routes();
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+
+Route::group(['middleware' => ['status','auth']], function(){
+    $groupData=[
+      'namespace'=>'Blog\Admin',
+      'prefix'=>'admin',
+    ];
+
+    Route::group($groupData, function (){
+       Route::resource('index','MainController')->names('blog.admin.index') ;
+    });
+});
