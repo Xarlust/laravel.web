@@ -1,7 +1,47 @@
 html,body {
     position: relative;
-    width: 1440px;
-    height: 1449px;
-    background: #F123FF;
 }
-
+.h5{
+    font-size:36px!important;
+    font-family: 'Lobster', cursive;
+    color: #F46384;
+}
+.card-title{
+    font-family: 'Lobster', cursive;
+    color: #F46384;
+}
+.h1{
+    font-family: 'Lobster', cursive;
+    color: #f6993f;
+}
+.h1_1{
+    font-family: 'Lobster', cursive;
+    color: #F46384;
+}
+.pt-4{
+    background-color: #F4F4F4;
+}
+.col-md-1{
+    max-width: 50px!important;
+}
+.footer_line_1{
+    margin: 0px
+}
+#button_del{
+    background-color: #f6993f!important;
+}
+#button_add {
+    margin: 10%!important;
+}
+.btn{
+    margin: 1%!important;
+    background-color: #F46384!important;
+    border-radius: 10px!important;
+    color: #f8fafc!important;
+}
+.h1_d{
+    font-family: 'Lobster', cursive;
+}
+.form-control{
+    border-color: #ffed4a!important;
+}
