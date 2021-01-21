@@ -19,7 +19,10 @@ class UsersSeed extends Seeder
             'email'=>'a@a.ru',
             'password'=>Hash::make('12345678'),
         ]);
-
+        User::create([
+            'email'=>'1@1.ru',
+            'password'=>Hash::make('12345678'),
+        ]);
         //
     }
 }
