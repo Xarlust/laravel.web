@@ -56,11 +56,13 @@ html,body {
 #button_add {
     margin: 10%!important;
 }
-.btn{
+.btn-danger{
     margin: 1%!important;
-    background-color: #F46384;
     border-radius: 10px!important;
     color: #f8fafc!important;
+}
+.col-10{
+    color: #F46384!important;
 }
 .h1_d{
     font-family: 'Lobster', cursive;
