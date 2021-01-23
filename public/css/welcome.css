@@ -10,10 +10,12 @@ html,body {
     font-family: 'Lobster', cursive;
     color: #F46384;
 }
+
 .h1{
     font-family: 'Lobster', cursive;
     color: #f6993f;
 }
+
 .h1_1{
     font-family: 'Lobster', cursive;
     color: #F46384;
@@ -23,6 +25,27 @@ html,body {
 }
 .col-md-1{
     max-width: 50px!important;
+}
+.product-card{
+    background: #FFFFFF;
+    border: 1px solid #F4F3F3;
+    border-radius: 15px;
+}
+.btn-secondary{
+    background-color: #f6993f!important;
+}
+.product-card__title{
+    font-size: 32px;
+    font-family: 'Lobster', cursive;
+    color: #F46384;
+}
+.product-card__price{
+    font-size: 32px;
+    font-family: 'Lobster', cursive;
+    color: #f6993f;
+}
+.product-card__image{
+    border-radius: 15px;
 }
 .footer_line_1{
     margin: 0px
@@ -35,7 +58,7 @@ html,body {
 }
 .btn{
     margin: 1%!important;
-    background-color: #F46384!important;
+    background-color: #F46384;
     border-radius: 10px!important;
     color: #f8fafc!important;
 }

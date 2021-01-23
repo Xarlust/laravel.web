@@ -163,108 +163,30 @@
                 <div class=" row-cols-md-12 ">
                     <img src="/images/207178-OZGPQL-189.jpg" class="img-fluid rounded mx-auto d-block"  >
                 </div>
-        </div>s
-    <main class="container">
+        </div>
 
-        <div class="row row-cols-1 row-cols-md-4 ">
-            <div class="col">
-                <div class="card mb-4 shadow-sm" >
-
-                       <img src="/images/1.jpg" class="card-img-top" lass="img-fluid" >
-
-                    <div class="card-body">
-                        <h1 class="card-title pricing-card-title c-red"  >Букет1</h1>
-                        <p> Описание букетаОписание букетаОписание букетаОписание букетаОписание букетаОписание букета</p>
-                        <h1 class="h1" >1680 рублей</h1>
+        <div class="container">
+            <div class="row">
+                @foreach($products as $product)
+                    <div class="col-12 col-md-3">
+                        <div class="product-card">
+                            <img class="product-card__image" src="/images/1.jpg"/>
+                            <div class="product-card__body">
+                                <div class="product-card__title">
+                                    {{ $product->name }}
+                                </div>
+                                <div class="product-card__price">
+                                    {{ $product->price }}
+                                </div>
+                                <div class="product-card__description">
+                                    {{ $product->description }}
+                                </div>
+                            </div>
+                        </div>
                     </div>
-                </div>
-            </div>
-            <div class="col">
-                <div class="card mb-4 shadow-sm" >
-
-                    <img src="/images/1.jpg" class="card-img-top" lass="img-fluid" >
-
-                    <div class="card-body">
-                        <h1 class="card-title pricing-card-title c-red"  >Букет2</h1>
-                        <p> Описание букетаОписание букетаОписание букетаОписание букетаОписание букетаОписание букета</p>
-                        <h1 class="h1" >1680 рублей</h1>
-                    </div>
-                </div>
-            </div>
-            <div class="col">
-                <div class="card mb-4 shadow-sm" >
-
-                    <img src="/images/1.jpg" class="card-img-top" lass="img-fluid" >
-
-                    <div class="card-body">
-                        <h1 class="card-title pricing-card-title c-red"  >Букет3</h1>
-                        <p> Описание букетаОписание букетаОписание букетаОписание букетаОписание букетаОписание букета</p>
-                        <h1 class="h1" >1680 рублей</h1>
-                    </div>
-                </div>
-            </div>
-            <div class="col">
-                <div class="card mb-4 shadow-sm" >
-
-                    <img src="/images/1.jpg" class="card-img-top" lass="img-fluid" >
-
-                    <div class="card-body">
-                        <h1 class="card-title pricing-card-title c-red"  >Букет4</h1>
-                        <p> Описание букетаОписание букетаОписание букетаОписание букетаОписание букетаОписание букета</p>
-                        <h1 class="h1" >1680 рублей</h1>
-                    </div>
-                </div>
-            </div>
-            <div class="col">
-                <div class="card mb-4 shadow-sm" >
-
-                    <img src="/images/1.jpg" class="card-img-top" lass="img-fluid" >
-
-                    <div class="card-body">
-                        <h1 class="card-title pricing-card-title c-red"  >Букет1</h1>
-                        <p> Описание букетаОписание букетаОписание букетаОписание букетаОписание букетаОписание букета</p>
-                        <h1 class="h1" >1680 рублей</h1>
-                    </div>
-                </div>
-            </div>
-            <div class="col">
-                <div class="card mb-4 shadow-sm" >
-
-                    <img src="/images/1.jpg" class="card-img-top" lass="img-fluid" >
-
-                    <div class="card-body">
-                        <h1 class="card-title pricing-card-title c-red"  >Букет1</h1>
-                        <p> Описание букетаОписание букетаОписание букетаОписание букетаОписание букетаОписание букета</p>
-                        <h1 class="h1" >1680 рублей</h1>
-                    </div>
-                </div>
-            </div>
-            <div class="col">
-                <div class="card mb-4 shadow-sm" >
-
-                    <img src="/images/1.jpg" class="card-img-top" lass="img-fluid" >
-
-                    <div class="card-body">
-                        <h1 class="card-title pricing-card-title c-red"  >Букет1</h1>
-                        <p> Описание букетаОписание букетаОписание букетаОписание букетаОписание букетаОписание букета</p>
-                        <h1 class="h1" >1680 рублей</h1>
-                    </div>
-                </div>
-            </div>
-            <div class="col">
-                <div class="card mb-4 shadow-sm" >
-
-                    <img src="/images/1.jpg" class="card-img-top" lass="img-fluid" >
-
-                    <div class="card-body">
-                        <h1 class="card-title pricing-card-title c-red"  >Букет1</h1>
-                        <p> Описание букетаОписание букетаОписание букетаОписание букетаОписание букетаОписание букета</p>
-                        <h1 class="h1" >1680 рублей</h1>
-                    </div>
-                </div>
+                @endforeach
             </div>
         </div>
-    </main>
 
         <div class="container">
             <div class="row row-cols-1 row-cols-md-2 ">

@@ -2,6 +2,8 @@
 
 use App\Http\Controllers\Admin\ProductController;
 use App\Http\Controllers\Auth\LoginController;
+use App\Http\Controllers\IndexController;
+use App\Models\Product;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -23,9 +25,7 @@ use Illuminate\Support\Facades\Route;
 //    //return view('welcome');
 //});
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::resource('/',IndexController::class);
 
 Route::get('/logout', [
     LoginController::class,
