@@ -182,7 +182,7 @@
                         <label class="form-file-label" >Прикрепить изображение</label>
                     </div>
                     <div class="col-1 d-flex justify-content-start align-items-center">
-                        <a  type="button" class="btn " id="button_add" >Добавить</a>
+                        <a  type="button" class="btn btn-danger"  >Добавить</a>
                     </div>
                 </div>
             </div>

@@ -418,7 +418,7 @@
 
 
 <div class="col-10 d-flex justify-content-end align-items-center">
-    <a type="button" class="btn ">Добавить новый букет</a>
+    <a type="button" class="btn btn-danger">Добавить новый букет</a>
 </div>
 
 <div class="container">
