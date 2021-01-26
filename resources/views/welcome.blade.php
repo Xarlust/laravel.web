@@ -162,6 +162,7 @@
         <div  class="container">
                 <div class=" row-cols-md-12 ">
                     <img src="/images/207178-OZGPQL-189.jpg" class="img-fluid rounded mx-auto d-block"  >
+
                 </div>
         </div>
 
