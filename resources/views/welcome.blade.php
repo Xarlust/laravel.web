@@ -162,6 +162,7 @@
         <div  class="container">
                 <div class=" row-cols-md-12 ">
                     <img src="/images/207178-OZGPQL-189.jpg" class="img-fluid rounded mx-auto d-block"  >
+
                 </div>
         </div>
 
@@ -170,7 +171,7 @@
                 @foreach($products as $product)
                     <div class="col-12 col-md-3">
                         <div class="product-card">
-                            <img class="product-card__image" src="/images/1.jpg"/>
+                            <img class="product-card__image" src="{{$product->file_path}}"/>
                             <div class="product-card__body">
                                 <div class="product-card__title">
                                     {{ $product->name }}
