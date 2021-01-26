@@ -19,14 +19,16 @@ class ProductsSeed extends Seeder
 
             'name'=>'букет1',
             'price'=>'9999 рублей',
-            'description'=>'Описание товараОписание товараОписание товара'
+            'description'=>'Описание товараОписание товараОписание товара',
+            'file_path'=>'/public/images/1.jpg'
         ]);
 
         Product::create([
 
             'name'=>'букет2',
             'price'=>'9000 рублей',
-            'description'=>'Описание товараОписание товараОписание товара'
+            'description'=>'Описание товараОписание товараОписание товара',
+            'file_path'=>'/public/images/1.jpg'
         ]);
         //
     }

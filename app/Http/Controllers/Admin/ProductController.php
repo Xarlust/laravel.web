@@ -20,47 +20,87 @@ class ProductController extends Controller
 
     public function create(Product $product)
     {
-        return view('admin.product_editor',[
-            'product'=> $product
+        return view('admin.product_editor', [
+            'product' => $product,
+            'action' => 'create'
         ]);
     }
 
-    public function store(Request $request, Product $product)
+    public function store(Request $request)
     {
-        Product::create($request->only([
+
+        $request->validate([
+            'name' => 'required|max:40',
+            'price' => 'required|numeric',
+            'description' => 'required|max:60',
+            'file_path' => 'required|mimes:jpg,jpeg,png,bmp|max:2048'
+        ]);
+
+        $file_path = '/storage/' . $request->file('file_path')->storeAs('uploads', time() . '_' . $request->file_path->getClientOriginalName(), 'public');
+
+        $data=$request->only([
             'name',
             'price',
-            'description'
-        ]));
+            'description',
+        ]);
 
-        return view('admin.products',[
-        'product' => $product
+        $data['file_path']=$file_path;
+        $product=new Product($data);
+        $product->save();
+        $products = Product::all();
+
+        return view('admin.products', [
+            'products' => $products,
+
         ]);
     }
 
-    public function edit(Request $request, Product $product)
+
+    public function edit(Product $product)
     {
-        return view('admin.product_editor',[
-            'product'=> $product
+        return view('admin.product_editor', [
+            'product' => $product,
+            'action' => 'edit'
         ]);
     }
 
     public function update(Request $request, Product $product)
     {
-        $product->update($request->only([
+
+        $request->validate([
+            'name' => 'required|max:40',
+            'price' => 'required|numeric',
+            'description' => 'required|max:60',
+            'file_path' => 'required|mimes:jpg,jpeg,png,bmp|max:2048'
+        ]);
+
+        $file_path = '/storage/' . $request->file('file_path')->storeAs('uploads', time() . '_' . $request->file_path->getClientOriginalName(), 'public');
+
+        $data=$request->only([
             'name',
             'price',
-            'description'
-        ]));
+            'description',
+        ]);
 
-        return view('admin.products',[
-            'product'=> $product
+        $data['file_path']=$file_path;
+        $product->update($data);
+
+
+        $products = Product::all();
+
+        return view('admin.products', [
+            'products' => $products,
         ]);
     }
 
-    public function delete(Product $product)
+    public function destroy(Product $product)
     {
-        return view('admin.products');
+
+        $product->delete();
+        $products = Product::all();
+        return view('admin.products', [
+            'products' => $products,
+        ]);
     }
 
 

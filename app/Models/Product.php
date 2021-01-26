@@ -18,8 +18,10 @@ class Product extends Model
     protected $fillable = [
         'name',
         'price',
-        'description'
+        'description',
+        'file_path'
     ];
+
 
     /**
      * The attributes that should be hidden for arrays.

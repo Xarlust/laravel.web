@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\Admin\ProductController;
 use App\Http\Controllers\Auth\LoginController;
+use App\Http\Controllers\FileUpload;
 use App\Http\Controllers\IndexController;
 use App\Models\Product;
 use Illuminate\Support\Facades\Route;
@@ -25,7 +26,15 @@ use Illuminate\Support\Facades\Route;
 //    //return view('welcome');
 //});
 
-Route::resource('/',IndexController::class);
+
+
+Route::get('/',[
+    IndexController::class,
+    'index'
+]);
+
+
+
 
 Route::get('/logout', [
     LoginController::class,
@@ -41,5 +50,6 @@ Route::group([
     'prefix' => 'admin'
 ], function () {
     Route::resource('products', ProductController::class);
+
 
 });

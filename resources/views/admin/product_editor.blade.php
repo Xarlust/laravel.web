@@ -163,28 +163,75 @@
     <main class="container">
 
             <div class="col-md-7 col-lg-8" >
-                <h1 class="h1_d">Добавление букета</h1>
-                <div class="row g-3">
-                    <div class="col-sm-5">
-                        <label  class="form-label">Введите название</label>
-                        <input type="text" class="form-control"   >
+                @if ($message = Session::get('success'))
+                    <div class="alert alert-success">
+                        <strong>{{ $message }}</strong>
                     </div>
-                    <div class="col-sm-5">
-                        <label  class="form-label">Введите цену</label>
-                        <input type="text" class="form-control"     >
+                @endif
+
+                @if (count($errors) > 0)
+                    <div class="alert alert-danger">
+                        <ul>
+                            @foreach ($errors->all() as $error)
+                                <li>{{ $error }}</li>
+                            @endforeach
+                        </ul>
                     </div>
-                    <div class="col-sm-10">
-                        <label  class="form-label">Введите описание</label>
-                        <input type="text" class="form-control">
+                @endif
+                    <h1 class="h1_d">Добавление букета</h1>
+                @if($action=='create')
+                <form method="post" action="/admin/products" enctype="multipart/form-data">
+                    @csrf
+                    <div class="row g-3">
+                        <div class="col-sm-5">
+                            <label  class="form-label">Введите название</label>
+                            <input type="text" class="form-control" name="name"  >
+                        </div>
+                        <div class="col-sm-5">
+                            <label  class="form-label">Введите цену</label>
+                            <input type="text" class="form-control" name="price"    >
+                        </div>
+                        <div class="col-sm-10">
+                            <label  class="form-label">Введите описание</label>
+                            <input type="text" class="form-control" name="description">
+                        </div>
+
+                        <div class="form-file">
+                            <input type="file"  name="file_path" class="form-file-input" >
+                        </div>
+                        <div class="col-1 d-flex justify-content-start align-items-center">
+                            <button class="btn btn-danger" name="submit" type="submit">Добавить</button>
+                        </div>
                     </div>
-                    <div class="form-file">
-                        <input type="file"  class="form-file-input" >
-                        <label class="form-file-label" >Прикрепить изображение</label>
-                    </div>
-                    <div class="col-1 d-flex justify-content-start align-items-center">
-                        <a  type="button" class="btn btn-danger"  >Добавить</a>
-                    </div>
-                </div>
+                </form>
+            @elseif($action=='edit')
+
+                    <form action="{{route('products.update',$product)}}" method="post" enctype="multipart/form-data">
+                        @csrf
+                        @method('PUT')
+
+                        <div class="row g-3">
+                            <div class="col-sm-5">
+                                <label class="form-label">Введите название</label>
+                                <input type="text" class="form-control" name="name" value="{{$product['name']}}">
+                            </div>
+                            <div class="col-sm-5">
+                                <label class="form-label">Введите цену</label>
+                                <input type="text" class="form-control" name="price" value="{{$product['price']}}">
+                            </div>
+                            <div class="col-sm-10">
+                                <label class="form-label">Введите описание</label>
+                                <input type="text" class="form-control" name="description" value="{{$product['description']}}">
+                            </div>
+                            <div class="form-file">
+                                <input type="file" name="file_path" class="form-file-input">
+                            </div>
+                            <div class="col-1 d-flex justify-content-start align-items-center">
+                                <button class="btn btn-danger" type="submit">Изменить</button>
+                            </div>
+                        </div>
+                    </form>
+                @endif
             </div>
     </main>
 

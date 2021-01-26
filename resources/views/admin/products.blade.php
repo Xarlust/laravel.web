@@ -418,15 +418,16 @@
 
 
 <div class="col-10 d-flex justify-content-end align-items-center">
-    <a type="button" class="btn btn-danger">Добавить новый букет</a>
+    <a type="button" class="btn btn-danger" href="/admin/products/create" >Добавить новый букет</a>
 </div>
 
 <div class="container">
     <div class="row">
         @foreach($products as $product)
+
             <div class="col-12 col-md-3">
                 <div class="product-card">
-                    <img class="product-card__image" src="/images/1.jpg"/>
+                    <img class="product-card__image" src="{{$product->file_path}}"/>
                     <div class="product-card__body">
                         <div class="product-card__title">
                             {{ $product->name }}
@@ -438,12 +439,19 @@
                             {{ $product->description }}
                         </div>
                         <div class="product-card__controls">
-                            <a type="button" class="btn btn-secondary">Редактировать</a>
-                            <a type="button" class="btn btn-danger">Удалить</a>
+                            <form action="{{route('products.edit',$product)}}" method="get">
+                                <button class="btn btn-secondary"  type="submit">Редактировать</button>
+                            </form>
+                            <form action="{{route('products.destroy',$product)}}" method="post">
+                                @csrf
+                                @method('DELETE')
+                                <button class="btn btn-danger" type="submit">Удалить</button>
+                            </form>
                         </div>
                     </div>
                 </div>
             </div>
+
         @endforeach
     </div>
 </div>
