@@ -32,7 +32,9 @@ html,body {
     border-radius: 15px;
 }
 .btn-secondary{
+    margin: 1%!important;
     background-color: #f6993f!important;
+    border-radius: 10px!important;
 }
 .product-card__title{
     font-size: 32px;
